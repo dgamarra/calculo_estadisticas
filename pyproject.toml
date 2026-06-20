@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calculo-estadisticas"
+version = "0.1.0"
+description = "Análisis estadístico de archivos CSV"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "dgamarra"},
+]
+dependencies = [
+    "numpy>=2.4",
+    "pandas>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9",
+    "pytest-cov>=7",
+    "pytest-mock>=3",
+]
+
+[project.scripts]
+analizar-csv = "calculo_estadisticas.analisis:main"
+procesar-data = "procesar_data:main"
+
+[tool.setuptools]
+packages = ["calculo_estadisticas"]
+py-modules = ["procesar_data"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

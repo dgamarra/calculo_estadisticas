@@ -7,7 +7,16 @@ Paquete Python para leer archivos CSV, detectar automáticamente el delimitador 
 ## Instalación
 
 ```bash
-pip install pandas numpy
+pip install .
+pip install .[dev]     # incluye dependencias de desarrollo
+```
+
+## CLI
+
+```bash
+analizar-csv                          # usa data/datos.csv por defecto
+analizar-csv data/datos.csv
+procesar-data data/datos.csv
 ```
 
 ## Uso como librería
@@ -15,26 +24,15 @@ pip install pandas numpy
 ```python
 from calculo_estadisticas import analizar_csv
 
-resultado = analizar_csv("datos.csv")
+resultado = analizar_csv("data/datos.csv")
 print(resultado)
 # {'num': {'media': 85.91, 'mediana': 87.1, ...}, 'edad': {'media': 29.5, ...}}
 ```
 
-## Uso como script
-
-```bash
-python -m calculo_estadisticas.analisis
-python -m calculo_estadisticas.analisis datos.csv
-```
-
-## Procesar datos
-
-El script `procesar_data.py` parsea archivos CSV simples con formato `nombre,num,edad`:
-
 ```python
 from procesar_data import procesar_archivo
 
-registros = procesar_archivo("datos.csv")
+registros = procesar_archivo("data/datos.csv")
 for r in registros:
     print(r)  # {'name': 'Ana', 'num': 85.5, 'age': 25}
 ```
@@ -67,7 +65,7 @@ for r in registros:
 ## Tests
 
 ```bash
-pip install pytest pytest-mock pytest-cov
+pip install -r requirements.txt
 pytest tests/ --cov=calculo_estadisticas --cov-report=term-missing
 ```
 
