@@ -1,0 +1,24 @@
+language: es-ES
+reviews:
+  auto_review:
+    enabled: true
+    base_branches:
+      - main
+      - master
+  poem: false
+  review_status: false
+  path_instructions:
+    - path: "calculo_estadisticas/**"
+      instructions: |
+        El paquete debe mantener cobertura del 100%.
+        Usar typing y docstrings en español.
+    - path: "procesar_data.py"
+      instructions: |
+        Archivo legacy separado del paquete.
+        Mantener responsabilidad única en cada función.
+    - path: "tests/**"
+      instructions: |
+        Usar pytest con pytest-mock.
+        Mantener cobertura del 100%.
+chat:
+  auto_reply: true
