@@ -84,10 +84,15 @@ def analizar_csv(
     return resultado
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Punto de entrada CLI: imprime estadísticas del CSV."""
     import sys
 
-    ruta = sys.argv[1] if len(sys.argv) > 1 else "datos.csv"
+    ruta = sys.argv[1] if len(sys.argv) > 1 else "data/datos.csv"
     resultado = analizar_csv(ruta)
     for col, stats in resultado.items():
         print(f"{col}: {stats}")
+
+
+if __name__ == "__main__":
+    main()

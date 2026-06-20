@@ -72,3 +72,18 @@ def procesar_archivo(ruta: str | Path) -> list[dict[str, Any]]:
 
     logger.info("Registros válidos: %d de %d", len(registros), len(lineas))
     return registros
+
+
+def main() -> None:
+    """Punto de entrada CLI: muestra los registros parseados del CSV."""
+    import sys
+
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    ruta = sys.argv[1] if len(sys.argv) > 1 else "data/datos.csv"
+    registros = procesar_archivo(ruta)
+    for r in registros:
+        print(r)
+
+
+if __name__ == "__main__":
+    main()
