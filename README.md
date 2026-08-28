@@ -1,4 +1,5 @@
 # cálculo_estadisticas
+<img width="223" height="148" alt="Logo UC" src="https://github.com/user-attachments/assets/8fd70b14-e3ea-4f54-a5c1-2465ccc7976c" />
 
 [![CodeRabbit](https://img.shields.io/badge/CodeRabbit-Configurado-1f1f1f?logo=coderabbit)](https://github.com/dgamarra/calculo_estadisticas)
 
